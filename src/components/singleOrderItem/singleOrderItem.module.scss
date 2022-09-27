@@ -1,0 +1,25 @@
+@use '../../styles/mixins/flexbox' as fb;
+@use '../../styles/abstract/colors' as color;
+@use '../../styles//mixins/breakpoints' as br;
+
+.item {
+    td {
+        font-size: 14px;
+        line-height: 24px;
+        color: color.$black;
+        padding: 16px 0;
+        border-bottom: 1px solid color.$grey;
+    }
+
+    .trash {
+        width: 50px;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .itemImg {
+        width: 150px;
+        height: 150px;
+    }
+
+}

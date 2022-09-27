@@ -1,0 +1,31 @@
+@use '../../styles/mixins/flexbox' as fb;
+@use '../../styles/abstract/colors' as colors;
+
+.extraContainer {
+    position: relative;
+    @include fb.flexbox(row, space-between, center);
+    width: 100%;
+    max-width: 448px;
+    border: 1px solid colors.$grey;
+    border-radius: 4px;
+    background: colors.$white;
+    margin-bottom: 20px;
+    padding: 12px 53px 12px 16px;
+    cursor: pointer;
+}
+
+.active {
+    background: colors.$activeBg;
+    border: 1px solid colors.$red;
+}
+
+.activeImg {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.noImg {
+    display: none;
+}
+

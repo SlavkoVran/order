@@ -1,0 +1,43 @@
+@use '../../styles/mixins/flexbox' as fb;
+@use '../../styles/abstract/colors' as colors;
+
+.cardContainer {
+    position: relative;
+    width: 100%;
+    max-width: 411px;
+    height: 297px;
+    border: 1px solid colors.$grey;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+    @include fb.flexbox(column, flex-start, flex-start);
+    cursor:pointer;
+
+    h2 {
+        margin: 12px 0;
+    }
+
+    p {
+        font-size: 14px;
+    }
+    
+    .img {
+        align-self: center;
+    }
+ 
+}
+
+.active {
+    background: colors.$activeBg;
+    border: 1px solid colors.$red;
+}
+
+.activeImg {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.noImg {
+    display: none;
+}

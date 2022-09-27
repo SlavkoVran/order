@@ -1,0 +1,21 @@
+@use '../../styles/abstract/colors' as colors;
+@use '../../styles/mixins/breakpoints'as br;
+@use '../../styles/mixins/flexbox' as fb;
+
+.baseListContainer{
+    @include    fb.flexbox(row, space-between, center);
+    flex-wrap: wrap;   
+    @include    br.breakpoint( tablet ){
+          justify-content: center;
+    }
+}
+
+.errMessage {
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    margin-top: 32px;
+    span {
+        color: colors.$red;
+    }
+}

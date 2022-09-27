@@ -1,0 +1,11 @@
+@use '../../styles/abstract/colors' as colors;
+@use '../../styles/mixins/breakpoints'as br;
+@use '../../styles/mixins/flexbox' as fb;
+
+.bowlListContainer{
+    @include    fb.flexbox(row, space-between, center);
+    flex-wrap: wrap;   
+    @include    br.breakpoint( tablet ){
+          justify-content: center;
+    }
+}

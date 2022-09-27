@@ -1,0 +1,125 @@
+@import '../abstract/colors';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+* {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   min-height: 100%;
+   height: 1px;
+}
+
+body {
+   padding: 0;
+   margin: 0;
+   font-size: 16px;
+   color: $black;
+}
+
+body,
+input,
+select,
+textarea {
+   font-family: 'Inter', sans-serif;
+   font-weight: 400;
+}
+
+input,
+select,
+textarea,
+button {
+   outline: none;
+   border: 0;
+   font-family: 'Inter', sans-serif;
+   font-weight: 400;
+}
+
+a {
+   text-decoration: none;
+}
+
+ul {
+   list-style-type: none;
+}
+
+ul,
+li,
+p {
+   padding: 0;
+   margin: 0;
+   line-height: 24px;
+   letter-spacing: -0.4px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   padding: 0;
+   margin: 0;
+   font-weight: 700;
+}
+
+h1 {
+   font-size: 32px;
+   line-height: 42px;
+}
+
+h2 {
+   font-size: 20px;
+   line-height: 24px;
+}
+
+h3 {
+   font-size: 24px;
+   line-height: 24px;
+}
+
+h4 {
+   font-size: 16px;
+   line-height: 24px;
+   letter-spacing: -0.4px;
+}
+
+.fullscreenBox {
+   min-height: 100%;
+   background: #000000;
+   display: flex;
+   padding: 15px;
+}
+
+.innerBox {
+   width: 50%;
+   height: 500px;
+   background: green;
+   background: red;
+   margin: auto;
+   color: #ffffff;
+}
+
+footer {
+   width: 100%;
+   height: 50px;
+   background: red;
+}
+
+.videoBox {
+   position: relative;
+   width: 100%;
+   max-width: 500px;
+}
+
+.cover {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   left: 0;
+   top: 0;
+   background: #000000;
+   cursor: pointer;
+   z-index: 999999;
+}

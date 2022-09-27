@@ -1,0 +1,44 @@
+@use '../../styles/mixins/flexbox' as fb;
+@use '../../styles/abstract/colors' as color;
+@use '../../styles//mixins/breakpoints' as br;
+
+.quantityPickerContainer {
+    width: 63px;
+    height: 32px;
+    position: relative;
+}
+
+input {
+    @include fb.flexbox(row, center, center);
+    width: 63px;
+    height: 32px;
+    border: 1px solid color.$grey;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+.btn {
+    position: absolute;
+    @include fb.flexbox(row, center, center);
+    width: 32px;
+    height: 50%;
+    z-index: 10;
+    background: #E9E8F8;
+    cursor: pointer;
+
+}
+
+.decrementBtn {
+    @extend .btn;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 4px 4px;
+}
+
+.incrementBtn {
+    @extend .btn;
+    top: 0;
+    right: 0;
+    border-radius: 4px 4px 0 0;
+
+}

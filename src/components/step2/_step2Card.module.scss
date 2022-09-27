@@ -1,0 +1,58 @@
+@use '../../styles/mixins/flexbox' as fb;
+@use '../../styles/abstract/colors' as colors;
+@use '../../styles/mixins/breakpoints'as br;
+
+
+.cardContainer {
+    position: relative;
+    width: 100%;
+    max-width: 411px;
+    height: 162px;
+    border: 1px solid #E9E8F8;
+    border-radius: 4px;
+    padding: 15px;
+    margin-top: 20px;
+    @include fb.flexbox(row, flex-start, center);
+    cursor:pointer;
+}
+
+.imgContainer {
+    @include fb.flexbox(row, center, center);
+    background: colors.$black;
+    width: 100%;
+    max-width: 92px;
+    margin-right: 16px;
+    height: 132px;
+    border-radius: 4px;
+}
+
+.description {
+    font-size: 14px;
+    letter-spacing: -0.4px;
+    margin: 12px 0 16px 0;
+}
+
+.currency {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.active {
+    background: colors.$activeBg;
+    border: 1px solid colors.$red;
+}
+
+.activeImg {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.noImg {
+    display: none;
+}
+
+.activeTitle {
+    color: colors.$red;
+}

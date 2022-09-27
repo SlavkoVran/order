@@ -1,0 +1,40 @@
+@use '../../styles/mixins/flexbox' as fb;
+@use '../../styles/abstract/colors' as colors;
+
+.checkboxContainer {
+    position: relative;
+    @include fb.flexbox(row, flex-start, center);
+    // display: flex;
+    // justify-content: flex-start;
+    // align-items: center;
+    width: 25%;
+    // background: gainsboro;
+    margin: 12px 0;
+
+    input {
+        width: 24px;
+        height: 24px;
+        // border: 1px solid red;
+        z-index: 1;
+        appearance: none;
+        cursor: pointer;
+        margin: 0;
+    }
+
+    span {
+        line-height: 24px;
+        letter-spacing: -0.4px;
+        font-weight: 400;
+        margin-left: 8px;
+    }
+
+    img {
+        position: absolute;
+        z-index: 0;
+    }
+
+    .limit {
+        color: grey;
+    }
+}
+
