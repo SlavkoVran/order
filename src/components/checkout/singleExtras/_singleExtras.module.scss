@@ -1,0 +1,8 @@
+@use '../../../styles/mixins/flexbox' as fb;
+@use '../../../styles/abstract/colors' as color;
+@use '../../../styles//mixins/breakpoints' as br;
+
+.extrasContainer {
+    @include fb.flexbox(row, space-between, center);
+    margin-left: 8px;
+}

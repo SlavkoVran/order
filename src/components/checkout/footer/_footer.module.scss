@@ -1,0 +1,50 @@
+@use '../../../styles/abstract/colors' as color;
+@use '../../../styles/mixins/breakpoints'as br;
+@use '../../../styles/mixins/flexbox' as fb;
+
+.container {
+    @include fb.flexbox(row, space-between, center); 
+    height: 107px;
+    padding: 20px 80px;
+}
+
+.btnsContainer {
+    @include fb.flexbox(row, center, center); 
+}
+
+.btn {
+    @include fb.flexbox(row, space-between, center); 
+    color: color.$white;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.4px;
+    background: color.$red;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.placeOrderBtn {
+    @extend .btn;
+    width: 117px;
+    margin-left: 32px;
+}
+
+.backToCartBtn {
+    @extend .btn;
+    border: unset;
+    color: color.$black;
+    background: transparent;
+    width: 100%;
+    max-width: 80px;
+    padding: 0;
+}
+
+.progresContainer {
+    position: relative;
+    background: hsla(0, 92%, 67%, 0.2);
+    margin-top: 12px;
+    height: 1px;
+    width: 100%;
+}
+

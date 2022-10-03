@@ -4,17 +4,12 @@
 .checkboxContainer {
     position: relative;
     @include fb.flexbox(row, flex-start, center);
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
     width: 25%;
-    // background: gainsboro;
     margin: 12px 0;
 
     input {
         width: 24px;
         height: 24px;
-        // border: 1px solid red;
         z-index: 1;
         appearance: none;
         cursor: pointer;
@@ -37,4 +32,3 @@
         color: grey;
     }
 }
-

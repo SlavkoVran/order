@@ -7,10 +7,11 @@ const Step5 = ({ ingredients, getIngredients }) => {
 
     const { sizeCart, ingredientCart } = useContext(CartContext)
     const [limit, setLimit] = useState(0)
+    const isLimit = ingredientCart?.length >= limit ? true : false
 
     useEffect(() => {
         getIngredients()
-    },[getIngredients])
+    }, [getIngredients])
 
     useEffect(() => {
         if (sizeCart?.name === 'Small') {
@@ -21,8 +22,6 @@ const Step5 = ({ ingredients, getIngredients }) => {
             setLimit(10)
         }
     }, [sizeCart?.name])
-
-    const isLimit = ingredientCart?.length >= limit ? true : false
 
     return (
         <div className='container'>

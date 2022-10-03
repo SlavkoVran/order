@@ -2,17 +2,11 @@ import React, { useEffect } from 'react'
 import Step1Card from './Step1Card'
 import styles from './step1.module.scss'
 
-const Step1 = ({ bowls, getBowls}) => {
-    
-    // useEffect(() => {
-    //     console.log('s1')
-    //     getBowls()
-    // },[])
+const Step1 = ({ bowls, getBowls }) => {
 
     useEffect(() => {
-        console.log('s1')
         getBowls()
-    },[getBowls])
+    }, [getBowls])
 
     return (
         <div className='container'>
@@ -27,7 +21,6 @@ const Step1 = ({ bowls, getBowls}) => {
                             <Step1Card
                                 key={bowl.id}
                                 bowl={bowl}
-                                // handleAddBowl={handleSelect}
                             />
                         )
                     })

@@ -3,6 +3,7 @@ import './styles/_main.scss';
 import Nav from './components/nav/Nav'
 import Home from './pages/home/Home'
 import Cart from './pages/cart/Cart'
+import Checkout from './pages/checkout/Checkout'
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Switch>
           <Route exact path='/'><Home /></Route>
           <Route path='/cart'><Cart /></Route>
+          <Route path='/checkout'><Checkout /></Route>
         </Switch>
       </div>
     </Router>

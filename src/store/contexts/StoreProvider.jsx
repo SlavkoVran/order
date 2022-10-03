@@ -6,6 +6,7 @@ import { apiCall } from '../../services/api'
 export const StoreContext = createContext();
 
 const StoreContextProvider = ({ children }) => {
+    
     const [state, dispatch] = useReducer(reducer, initState)
 
     const getBowls = useCallback(() => {
@@ -28,7 +29,7 @@ const StoreContextProvider = ({ children }) => {
             .catch((error) => {
                 dispatch(action.getSizesFail(error))
             })
-    },[])
+    }, [])
 
     const getBases = useCallback(() => {
         dispatch(action.getBasesStart())
@@ -39,7 +40,7 @@ const StoreContextProvider = ({ children }) => {
             .catch((error) => {
                 dispatch(action.getBasesFail(error))
             })
-    },[])
+    }, [])
 
     const getSauces = useCallback(() => {
         dispatch(action.getSaucesStart())
@@ -50,7 +51,7 @@ const StoreContextProvider = ({ children }) => {
             .catch((error) => {
                 dispatch(action.getSaucesFail(error))
             })
-    },[])
+    }, [])
 
     const getIngredients = useCallback(() => {
         dispatch(action.getIngredietsStart())
@@ -61,7 +62,7 @@ const StoreContextProvider = ({ children }) => {
             .catch((error) => {
                 dispatch(action.getIngredietsFail(error))
             })
-    },[])
+    }, [])
 
     const getExtraIngredients = useCallback(() => {
         dispatch(action.getExtraIngredientsStart())
@@ -72,7 +73,7 @@ const StoreContextProvider = ({ children }) => {
             .catch((error) => {
                 dispatch(action.getExtraIngredientsFail(error))
             })
-    },[])
+    }, [])
 
     const nextStep = (activStep) => {
         dispatch(action.nextStepAction(activStep))
@@ -81,8 +82,6 @@ const StoreContextProvider = ({ children }) => {
     const backStep = (activStep) => {
         dispatch(action.backStepAction(activStep))
     }
-
-
 
     return (
         <StoreContext.Provider
@@ -102,7 +101,6 @@ const StoreContextProvider = ({ children }) => {
                 getExtraIngredients,
                 nextStep,
                 backStep,
-
             }}
         >
             {children}

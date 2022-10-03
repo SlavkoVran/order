@@ -1,0 +1,49 @@
+@use '../../../styles/mixins/flexbox' as fb;
+@use '../../../styles/abstract/colors' as color;
+@use '../../../styles//mixins/breakpoints' as br;
+
+.textFiledContainer {
+    width: 100%;
+    max-width: 302px;
+
+    label {
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    input,
+    select {
+        width: 100%;
+        margin: 8px 0 20px 0;
+        font-size: 14px;
+        line-height: 24px;
+        color: color.$black;
+        height: unset;
+        padding: 12px;
+        border: 1px solid color.$grey;
+        border-radius: 4px;
+        background: unset;
+
+        &.error {
+            border: 1px solid color.$red;
+            background: #FFFBFB;
+        }
+    }
+
+    span {
+        color: color.$red;
+    }
+}
+
+.errorMessageContainer {
+    margin-top: -20px;
+    height: 20px;
+}
+
+.errorMessage {
+    color: color.$red;
+    font-size: 10px;
+    line-height: 20px;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+}

@@ -6,7 +6,6 @@ const Step5Card = ({ ingredient, isLimit }) => {
 
     const { addIngredient, ingredientCart } = useContext(CartContext)
     const ref = useRef(null)
-
     const isDisabled = isLimit && !ref.current?.checked
     const isChecked = ingredientCart.includes(ingredient.name)
 

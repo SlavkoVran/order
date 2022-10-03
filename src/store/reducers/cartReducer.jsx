@@ -11,7 +11,8 @@ const initState = {
     subtotal: null,
     quantity: 1,
     cartCounter: null,
-    orderItem: []
+    orderItem: [],
+    total: null
 }
 
 const addBowl = (state, action) => {
@@ -87,6 +88,28 @@ const resetOrder = (state, action) => {
     }
 }
 
+const removeOrder = (state, action) => {
+    return {
+        ...state,
+        orderItem: state.orderItem.filter(item => item.id !== action.orderId)
+    }
+}
+
+const addQuantiyty = (state, action) => {
+    return {
+        ...state,
+        orderItem: action.item,
+        total: action.total,
+    }
+}
+
+const saveOrder = (state, action) => {
+    return {
+        ...state,
+        order: action.order
+    }
+}
+
 const reducer = (state, action) => {
     switch (action.type) {
         case actionTypes.ADD_BOWL:
@@ -107,6 +130,12 @@ const reducer = (state, action) => {
             return removeExtraIngredient(state, action)
         case actionTypes.RESET_ORDER:
             return resetOrder(state, action)
+        case actionTypes.REMOVE_ORDER:
+            return removeOrder(state, action)
+        case actionTypes.ADD_QUANTITY:
+            return addQuantiyty(state, action)
+        case actionTypes.SAVE_ORDER:
+            return saveOrder(state, action)
         default:
             return state
     }

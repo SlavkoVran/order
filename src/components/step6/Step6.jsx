@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect, useContext, useId } from 'react'
 import { useHistory } from "react-router-dom";
 import Step6Card from './Step6Card'
 import styles from './step6.module.scss'
@@ -7,10 +7,9 @@ import { StoreContext } from '../../store/contexts/StoreProvider'
 
 const Step6 = ({ extraIngredients, getExtraIngredients }) => {
 
+    const { nextStep } = useContext(StoreContext)
+    const id = useId()
     let history = useHistory();
-
-    console.log(history)
-
     const {
         bowlCart,
         sizeCart,
@@ -20,20 +19,28 @@ const Step6 = ({ extraIngredients, getExtraIngredients }) => {
         extraIngredientCart,
         subtotal,
         resetOrder,
+        quantity
     } = useContext(CartContext)
 
-    const { nextStep } = useContext(StoreContext)
-
     const handleAddToCart = () => {
-        console.log('aaaaaaaaaa')
+
         let orderItem = {
-            bowlCart,
-            sizeCart,
-            baseCart,
-            sauceCart,
-            ingredientCart,
-            extraIngredientCart,
-            subtotal,
+            id: id,
+            img: bowlCart.imagePath,
+            name: bowlCart.name,
+            size: sizeCart.name,
+            base: baseCart.name,
+            sauce: sauceCart.name,
+            ingredient: ingredientCart,
+            extras: extraIngredientCart,
+            subtotal: subtotal,
+            bowlId: bowlCart.id,
+            sizeId: sizeCart.id,
+            baseId: baseCart.id,
+            sauceId: sauceCart.id,
+            quantity: quantity,
+            itemPrice: Number(subtotal),
+            sizePrice: Number(sizeCart.price),
         }
         nextStep(1)
         resetOrder(orderItem)
@@ -82,7 +89,6 @@ const Step6 = ({ extraIngredients, getExtraIngredients }) => {
                                 <p key={key}>{item}</p>
                             )
                         })
-
                         }
                     </div>
                     {extraIngredientCart?.map((item, key) => {
@@ -101,7 +107,7 @@ const Step6 = ({ extraIngredients, getExtraIngredients }) => {
                             <h3>${subtotal}</h3>
                         </div>
                         <div className={styles.btnContainer}>
-                            <button className={styles.checkoutBtn}  onClick={handleGoToCheckout} >
+                            <button className={styles.checkoutBtn} onClick={handleGoToCheckout} >
                                 Go to checkout
                             </button>
                             <button className={styles.addToCartBtn} onClick={handleAddToCart} >

@@ -5,6 +5,7 @@ import styles from './stepCounter.module.scss'
 const StepCounter = () => {
 
   const { step, nextStep, backStep } = useContext(StoreContext)
+  const progresStep = step * 16.66
 
   const handleNext = () => {
     nextStep(step + 1)
@@ -18,7 +19,6 @@ const StepCounter = () => {
     nextStep(1)
   }
 
-  const progresStep = step * 16.66
   return (
     <div className={styles.container} >
       <div className={styles.steper}>
@@ -31,7 +31,6 @@ const StepCounter = () => {
         {step !== 1 && <button className={styles.backBtn} onClick={handleBack}>
           Back
         </button>}
-
         {step <= 5 ? (
           <button className={styles.nextBtn} onClick={handleNext}>
             Next

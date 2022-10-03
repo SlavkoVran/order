@@ -1,0 +1,37 @@
+@use '../../../styles/mixins/flexbox' as fb;
+@use '../../../styles/abstract/colors' as color;
+@use '../../../styles//mixins/breakpoints' as br;
+
+.formContainer {
+    @include fb.flexbox(column, flex-start, flex-start);
+    width: 100%;
+    max-width: 628px;
+    flex-wrap: wrap;
+}
+
+.formTitle {
+    margin-bottom: 40px;
+}
+
+
+.contentContainer {
+    @include fb.flexbox(row, space-between, flex-start);
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.noteContainer {
+    @include fb.flexbox(column, flex-start, flex-start);
+    width: 100%;
+
+    span {
+        font-size: 12px;
+        line-height: 12px;
+        margin-bottom: 8px;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 12px;
+    }
+}

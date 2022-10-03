@@ -4,11 +4,9 @@ import styles from './nav.module.scss'
 import { CartContext } from '../../store/contexts/CartProvider'
 
 const Nav = () => {
-    let history = useHistory();
-    const {
-        orderItem
-    } = useContext(CartContext)
 
+    let history = useHistory();
+    const { orderItem } = useContext(CartContext)
     const isFull = orderItem?.length > 0 ? true : false
 
     const handleOpenCart = () => {

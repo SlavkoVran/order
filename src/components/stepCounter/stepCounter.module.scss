@@ -1,19 +1,19 @@
 @use '../../styles/abstract/colors' as colors;
-@use '../../styles/mixins/breakpoints'as br;
+@use '../../styles/mixins/breakpoints' as br;
 @use '../../styles/mixins/flexbox' as fb;
 
 .container {
-    @include fb.flexbox(row, space-between, center); 
+    @include fb.flexbox(row, space-between, center);
     height: 107px;
     padding: 20px 80px;
 }
 
 .btnsContainer {
-    @include fb.flexbox(row, center, center); 
+    @include fb.flexbox(row, center, center);
 }
 
 .nextBtn {
-    @include fb.flexbox(row, space-between, center); 
+    @include fb.flexbox(row, space-between, center);
     color: colors.$white;
     font-size: 14px;
     line-height: 24px;
@@ -29,7 +29,6 @@
 }
 
 .backBtn {
-    // @include fb.flexbox(row, center, center); 
     font-size: 14px;
     line-height: 24px;
     letter-spacing: -0.4px;
@@ -49,7 +48,6 @@
 .steper {
     width: 100%;
     margin-right: 120px;
-    // background: red;
 }
 
 .progresContainer {

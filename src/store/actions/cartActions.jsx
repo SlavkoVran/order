@@ -66,10 +66,32 @@ export const resetOrder = (orderItem) => {
         orderItem: orderItem,
         bowl: '',
         size: '',
-        base:'',
-        sauce:'',
-        ingredient:[],
+        base: '',
+        sauce: '',
+        ingredient: [],
         extraIngredient: [],
         subtotal: null
+    }
+}
+
+export const removeOrder = (orderId) => {
+    return {
+        type: actionsTypes.REMOVE_ORDER,
+        orderId: orderId
+    }
+}
+
+export const addQuantity = (item, total) => {
+    return {
+        type: actionsTypes.ADD_QUANTITY,
+        item: item,
+        total: total
+    }
+}
+
+export const saveOrder = (order) => {
+    return {
+        type: actionsTypes.SAVE_ORDER,
+        order: order
     }
 }

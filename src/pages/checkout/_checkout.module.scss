@@ -1,0 +1,48 @@
+@use '../../styles/mixins/flexbox' as fb;
+@use '../../styles/abstract/colors' as color;
+@use '../../styles//mixins/breakpoints' as br;
+
+.detailsContainer {
+    @include fb.flexbox(row, flex-start, flex-start);
+    background: color.$bg;
+    padding: 64px 80px 80px 80px;
+    min-height: calc(100vh - 187px);
+    width: 100%;
+
+    @include br.breakpoint(tablet) {
+        padding: 32px 20px 40px 20px;
+    }
+}
+
+.details {
+    width: 100%;
+}
+
+.orderSummeryContainer {
+    width: 100%;
+    max-width: 411px;
+    border: 1px solid color.$grey;
+    background: color.$white;
+    padding: 32px 24px 24px 24px;
+
+    h3 {
+        margin-bottom: 16px;
+    }
+}
+
+hr {
+    background-color: color.$grey;
+    height: 1px;
+    border: none;
+    margin: 24px 0;
+}
+
+.freeDelivery {
+    text-align: right;
+    margin-top: 12px;
+}
+
+.total {
+    @include fb.flexbox(row, space-between, center);
+    color: color.$red;
+}

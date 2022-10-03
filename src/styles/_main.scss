@@ -10,18 +10,18 @@
     padding: 64px 80px 80px 80px;
     min-height: calc(100vh - 187px);
 
-    @include br.breakpoint(tablet){
+    @include br.breakpoint(tablet) {
         padding: 32px 20px 40px 20px;
     }
- }
+}
 
- .container {
-     width: 100%;
-     max-width: 1600px;
- }
+.container {
+    width: 100%;
+    max-width: 1600px;
+}
 
- .header {
-    p{
+.header {
+    p {
         width: 100%;
         max-width: 519px;
         margin: 12px 0 20px 0;

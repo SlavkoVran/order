@@ -1,40 +1,41 @@
-import React, { useEffect, useContext } from 'react'
-// import CartItem from './cartItem'
+import React from 'react'
 import styles from './singleOrderItem.module.scss'
-import { CartContext } from '../../store/contexts/CartProvider'
 import QuantityPicker from '../../components/quantityPicker/QuantityPicker'
 
+const SingleOrderItem = ({ item, removeOrder }) => {
 
-const SingleOrderItem = ({ item }) => {
-
-    const { bowlCart, baseCart, sauceCart, sizeCart, ingredientCart, extraIngredientCart, subtotal, } = item
+    const { id, name, img, base, sauce, size, ingredient, extras, quantity, itemPrice } = item
 
     return (
         <tr className={styles.item}>
-            <td className={styles.trash}>
+            <td className={styles.trash} onClick={() => { removeOrder(id) }} >
                 <img src="./storage/trash.png" alt="" />
             </td>
             <td className={styles.itemImg}>
-                <img src={`${bowlCart.imagePath}`} alt="" />
+                <img src={`${img}`} alt="" />
             </td>
             <td>
-                <h4>{bowlCart.name}</h4>
-                <p>{sizeCart.name}</p>
+                <h4>{name}</h4>
+                <p>{size}</p>
             </td>
-            <td>{baseCart.name}</td>
-            <td>{sauceCart.name}</td>
+            <td>{base}</td>
+            <td>{sauce}</td>
             <td>
-                {ingredientCart?.map((item, key) =>  <p key={key}>{item}</p>)}
+                {ingredient?.map((item, key) => <p key={key}>{item}</p>)}
 
             </td>
             <td>
-                {extraIngredientCart?.map((item, key) => <p key={key}>{item.name}</p>)}
+                {extras?.map((item, key) => <p key={key}>{item.name}</p>)}
 
             </td>
             <td>
-                <QuantityPicker min={1} max={10} />
+                <QuantityPicker
+                    id={id}
+                    quantity={quantity}
+                    min={1}
+                    max={10} />
             </td>
-            <td><h4>${subtotal}</h4></td>
+            <td><h4 className={styles.price}>${itemPrice}</h4></td>
         </tr>
     )
 }

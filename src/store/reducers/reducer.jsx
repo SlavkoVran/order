@@ -6,8 +6,7 @@ const initState = {
     sauces: [],
     bases: [],
     ingredients: [],
-    extraIngredients:[],
-    // cartTotal: null,
+    extraIngredients: [],
     loading: false,
     error: '',
     step: 1,
@@ -148,7 +147,6 @@ const getExtraIngredientsFail = (state, action) => {
         error: action.error
     }
 }
-
 
 // next
 

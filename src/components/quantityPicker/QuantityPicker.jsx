@@ -1,58 +1,62 @@
-import React, { Component } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './quantityPicker.module.scss'
+import { CartContext } from '../../store/contexts/CartProvider';
 
-export default class QuantityPicker extends Component {
+const QuantityPicker = ({id, min, max, quantity}) => {
+ const { addQuantity } = useContext(CartContext)
 
-  constructor(props) {
-    super(props);
+  const [value, setValue] = useState(quantity)
+  // eslint-disable-next-line
+  const [disableDec, setDisableDec] = useState(true)
+  // eslint-disable-next-line
+  const [disableInc, setDisableInc] = useState()
 
-    this.state = { value: this.props.min, disableDec: true, disableInc: false }
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
+
+  const handleIncrement = () => {
+    const plusState = value + 1;
+    if (value < max) {
+      setValue(plusState);
+      setDisableDec(false);
+    }
+    if (value === (max - 1)) {
+      setDisableInc(true);
+    }
+    if (value === min) {
+      setDisableDec(false)
+    }
   }
 
-  increment() {
-    const plusState = this.state.value + 1;
-    if (this.state.value < this.props.max) {
-      this.setState({ value: plusState });
-      this.setState({ disable: false });
-    }
-    if (this.state.value == (this.props.max - 1)) {
-      this.setState({ disableInc: true });
-    }
-    if (this.state.value == this.props.min) {
-      this.setState({ disableDec: false });
-    }
-  }
-
-  decrement() {
-    const minusState = this.state.value - 1;
-    if (this.state.value > this.props.min) {
-      this.setState({ value: minusState });
-      if (this.state.value == this.props.min + 1) {
-        this.setState({ disableDec: true });
+  const handleDecrement = () => {
+    const minusState = value - 1;
+    if (value > min) {
+      setValue(minusState);
+      if (value === min + 1) {
+        setDisableDec(true);
       }
     } else {
-      this.setState({ value: this.props.min });
+      setValue(min);
     }
-    if (this.state.value == this.props.max) {
-      this.setState({ disableInc: false });
+    if (value === max) {
+      setDisableInc(false);
     }
   }
 
-  render() {
-    const { disableDec, disableInc } = this.state;
+  useEffect(() => {
+    addQuantity(id, value)
+    // eslint-disable-next-line
+  },[value])
 
-    return (
-      <div className={styles.quantityPickerContainer}>
-        <button className={styles.decrementBtn} onClick={this.decrement}>
-          <img src="./storage/arrowD.png" alt=" arrow down" />
-        </button>
-        <input className={styles.input} type="text" value={this.state.value} readOnly />
-        <button className={styles.incrementBtn} onClick={this.increment}>
-          <img src="./storage/arrowU.png" alt=" arrow up" />
-        </button>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.quantityPickerContainer}>
+      <button className={styles.decrementBtn} onClick={handleDecrement}>
+        <img src="./storage/arrowD.png" alt=" arrow down" />
+      </button>
+      <input className={styles.input} type="text" value={value} readOnly />
+      <button className={styles.incrementBtn} onClick={handleIncrement}>
+        <img src="./storage/arrowU.png" alt=" arrow up" />
+      </button>
+    </div>
+  )
 }
+
+export default QuantityPicker

@@ -1,7 +1,6 @@
 @use '../../styles/mixins/flexbox' as fb;
 @use '../../styles/abstract/colors' as colors;
-@use '../../styles/mixins/breakpoints'as br;
-
+@use '../../styles/mixins/breakpoints' as br;
 
 .cardContainer {
     position: relative;
@@ -13,7 +12,7 @@
     padding: 15px;
     margin-top: 20px;
     @include fb.flexbox(row, flex-start, center);
-    cursor:pointer;
+    cursor: pointer;
 }
 
 .imgContainer {

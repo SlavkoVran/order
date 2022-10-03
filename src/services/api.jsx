@@ -4,10 +4,10 @@ const API_URL = 'https://fet.app.fsd.rs/api'
 
 export const apiCall = (method, url) => {
     return axios[method](`${API_URL}${url}`,
-            {
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjM2ODEwMzIsImV4cCI6MTY2NDU0NTAzMiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoic2xhdmtvdi5tb2JAZ21haWwuY29tIn0.sKIjCQwbphQ9a-0wv-LAaC2e-kzRkxeUwzjO5YpUD4CYCeeq2TMnlApdutRm3oEkeG1Y_c3kLj_Sp-J8RvbzhawUWkTqGSg3f-apx7aQIgu7q5slwT37rTu4CyRxyWYKeeFDfNBTXNrkNuYTYaebpScsi6GGyX8dSYnTxG_ObPAeLWdiG3boMjMHyAwIvNJhZLTmrcM_Wxs47Q7FusB3goGCQ2WyPP0yoBFmqrc-jLZev4YVrIXkAY4u7PEuGYQ2dhXNjzqDQLxiCCCeu1_7aUC1cjOfTupR7tkClpYbNMPHRs8T3QNJL27KZr31qHUI4Ik2jaZh4WkAsO3B55yYHQ`
-                },
-            })
+        {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE2NjQ2MjQzMTQsImV4cCI6MTY2NTQ4ODMxNCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImVtYWlsIjoic2xhdmtvdi5tb2IxQGdtYWlsLmNvbSJ9.3Y9Ektn4UNwhx2lPvktVIcx9CZzshiCvmT2JtvNvfIf6YjQWAYsJxEqltfKSunNK4BlQmOxmD3imN0jIYaJZuNQopB-s4sANllggtqUFDRJnhsmoHlsDkGzmw5n9vm6co-7DwaqXY3oLFQRwf2W2rrrVh3wj4GoRM8Ii70jccjWBiQMtm6MdVUPXbIDfC6gpO6RnBGxWKQ8526a95dytwSPWw8I-7km75IcmjivIooEiUoEVpM5oeXD5-loihiCJ4A5X0iL1wEjnOH7JhTrQpwM9cBsd2F5noCPpAcTL-39AWU6w1MciFIfYNQZPKrMTzrbyXPrRo9uMxN6X0TEixg`
+            },
+        })
 }

@@ -4,14 +4,13 @@
 .cardContainer {
     position: relative;
     width: 47%;
-    // max-width: 628px;
     min-height: 98px;
     border: 1px solid colors.$grey;
     border-radius: 4px;
     padding: 12px 16px;
     margin: 20px 10px 0 10px;
     @include fb.flexbox(column, flex-start, flex-start);
-    cursor:pointer;
+    cursor: pointer;
 
     h2 {
         font-size: 16px;
@@ -22,11 +21,10 @@
         font-size: 14px;
         letter-spacing: -0.4px;
     }
-    
+
     .img {
         align-self: center;
     }
- 
 }
 
 .active {
